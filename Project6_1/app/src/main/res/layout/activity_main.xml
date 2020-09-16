@@ -1,18 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+        <Chronometer
+            android:id="@+id/chronometer1"
+            android:format="예약에 걸린 시간 %s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStart"
+            android:text="예약 시작"/>
 
-    <TextView
+        </LinearLayout>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:id="@+id/rdoCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜 설정 (캘린더 뷰)"/>
+        <RadioButton
+            android:id="@+id/rdoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간 설정"/>
+    </RadioGroup>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="top"
+        android:layout_weight="1"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CalendarView
+                android:id="@+id/calendarView1"
+                android:layout_width="match_parent"
+                android:layout_height="308dp"
+                android:showWeekNumber="false" />
+
+            <TimePicker
+                android:id="@+id/timePicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:timePickerMode="spinner"
+
+                />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cccccc"
+
+            >
+            <Button
+                android:id="@+id/btnEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예약완료"
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/tvYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tvYear1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="년"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvMonth1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="월"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvDay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tvTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tvMinute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tvTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tvEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 예약됨"
+                android:textSize="15dp"
+                />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>

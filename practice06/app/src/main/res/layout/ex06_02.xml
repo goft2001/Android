@@ -6,15 +6,13 @@
     android:orientation="vertical">
 
 
-    <AnalogClock
+    <Chronometer
+        android:id="@+id/chronometer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-    <DigitalClock
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
-
+        android:format="시간 측정 : %s"
+        android:layout_gravity="center"
+        android:textSize="30dp"/>
 
 
 </LinearLayout>

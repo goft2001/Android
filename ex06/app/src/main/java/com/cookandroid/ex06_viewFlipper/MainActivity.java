@@ -1,11 +1,10 @@
-package com.cookandroid.ex06;
+package com.cookandroid.ex06_viewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {

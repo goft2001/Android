@@ -1,4 +1,4 @@
-package com.cookandroid.ex06;
+package com.cookandroid.ex06_viewFlipper;
 
 import org.junit.Test;
 
