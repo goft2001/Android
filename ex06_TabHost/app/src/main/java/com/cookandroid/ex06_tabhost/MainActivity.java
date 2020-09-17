@@ -14,7 +14,7 @@ public class MainActivity extends TabActivity {
         setContentView(R.layout.activity_main);
 
         TabHost tabHost = getTabHost();
-//
+
 //        TabSpec tabSpecSong = tabHost.newTabSpec("SONG").setIndicator("음악별");
 //        tabSpecSong.setContent(R.id.tabSong);
 //        tabHost.addTab(tabSpecSong);
