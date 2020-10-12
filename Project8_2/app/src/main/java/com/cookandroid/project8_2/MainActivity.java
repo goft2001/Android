@@ -1,7 +1,9 @@
 package com.cookandroid.project8_2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -24,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("간단 이미지 뷰어");
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},MODE_PRIVATE);
         btnPrev = (Button)findViewById(R.id.btnPrev);
         btnNext = (Button)findViewById(R.id.btnNext);
         myPicture = (myPictureView)findViewById(R.id.myPictureView1);
 
-        imageFiles=new File(Environment.getExternalStorageDirectory().
-                getAbsolutePath()+"/Pictures").listFiles();
-                imageFname=imageFiles[0].toString();
+        imageFiles=new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Pictures").listFiles();
+                imageFname = imageFiles[0].toString();
                 myPicture.imagePath = imageFname;
 
          btnPrev.setOnClickListener(new View.OnClickListener() {

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">mid_b_002</string>
+    <string-array name="blood_array">
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+
+
+
+
+        </string-array>
+</resources>

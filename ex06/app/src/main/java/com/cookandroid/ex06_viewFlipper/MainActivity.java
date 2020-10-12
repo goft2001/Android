@@ -37,8 +37,5 @@ public class MainActivity extends AppCompatActivity {
                 vFlipper.stopFlipping();
             }
         });
-
-
-
     }
 }

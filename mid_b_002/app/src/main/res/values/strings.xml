@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">mid_b_002</string>
+
+
+
+    <string-array name="wants_array">
+        <item>Appearance(외모)</item>
+        <item>Ability(능력)</item>
+        <item>Personalityr(성격)</item>
+        <item>appearance(가문)</item>
+        <item>appearance(신앙)</item>
+
+
+    </string-array>
+</resources>
