@@ -21,7 +21,7 @@ import java.net.URL;
 public class NetworkInsert extends AsyncTask<String,Void,String> {
 
     private URL Url;
-    private String URL_Adress = "http://10.100.206.37:9888/testDB/testDB_insert.jsp";
+    private String URL_Adress = "http://10.100.206.37:9999/testDB/testDB_insert.jsp";
     private Custom_Adapter adapter;
 
     public NetworkInsert(Custom_Adapter adapter){
@@ -78,21 +78,21 @@ public class NetworkInsert extends AsyncTask<String,Void,String> {
         return res;
     }
 
-    @Override
-    protected void onPostExecute(String s){
-        super.onPostExecute(s);
-        int res = 0;
-        try{
-            res = JsonParser.getResultJson(s);
-        } catch (JSONException e){
-            e.printStackTrace();
-        }
-        if(res==0){
+        @Override
+        protected void onPostExecute(String s){
+            super.onPostExecute(s);
+            int res = 0;
+            try{
+                res = JsonParser.getResultJson(s);
+            } catch (JSONException e){
+                e.printStackTrace();
+            }
+            if(res==0){
 
-        }
-        else{
-            new NetworkGet(adapter).execute("");
-        }
+            }
+            else{
+                new NetworkGet(adapter).execute("");
+            }
 
     }
 }

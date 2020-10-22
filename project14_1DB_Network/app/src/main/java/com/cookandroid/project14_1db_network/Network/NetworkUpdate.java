@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class NetworkUpdate extends AsyncTask<String,Void,String> {
     private URL Url;
-    private String URL_Adress = "http://10.100.206.37:9888/testDB/testDB_update.jsp";
+    private String URL_Adress = "http://10.100.206.37:9999/testDB/testDB_update.jsp";
     private Custom_Adapter adapter;
     public NetworkUpdate(Custom_Adapter adapter){
         this.adapter = adapter;
