@@ -13,7 +13,6 @@ public class JsonParser {
         String strID;
         String strName;
         String strPhone;
-        String strGrade;
         String strpwd;
 
         JSONObject rootJSON = new JSONObject(res);//josn형태의 스트링을 -> 객체로 변환해서 담기
@@ -42,7 +41,7 @@ public class JsonParser {
             }  else {
                 strpwd = jsonObj.getString("PHONE").toString();
             }
-            userList.add(new UserInfo(strID,strName,strPhone,strpwd));
+            userList.add(new UserInfo(strName,strID,strPhone,strpwd));
         }
         return jsonArray.length();
     }

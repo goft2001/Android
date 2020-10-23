@@ -12,23 +12,25 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.cookandroid.ch14_google_map.Network.JoinInsert;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.cookandroid.ch14_google_map.Network.loginSelect;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText id,pwd,phone,name;
-    private Button Join_Btn,login;
-
+    private Button Join_Btn,login_Btn;
+    private EditText edtID, edtPw;
 
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+        edtID = (EditText)findViewById  (R.id.edt_id);
+        edtPw = (EditText)findViewById  (R.id.edt_pw);
+
+
+        //회원가입 버튼!!
 
         Join_Btn=(Button)findViewById(R.id.btn_join);
         Join_Btn.setOnClickListener(new View.OnClickListener() {
@@ -43,12 +45,13 @@ public class LoginActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 String id = ((EditText)v.findViewById   (R.id.edt_id)).getText().toString();
                                 String name = ((EditText)v.findViewById (R.id.edt_name)).getText().toString();
-                                String phone = ((EditText)v.findViewById(R.id.edt_number)).getText().toString();
+                                String phone = ((EditText)v.findViewById(R.id.edt_phone)).getText().toString();
                                 String pwd = ((EditText)v.findViewById  (R.id.edt_pw)).getText().toString();
 
-                                new JoinInsert(id,pwd,name,phone).execute(id,name,phone,pwd);
-                            }
-                        }).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                new JoinInsert(LoginActivity.this).execute(id,name,phone,pwd);
+                                 }
+                               })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
@@ -59,19 +62,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-        login=(Button)findViewById(R.id.btn_login);
-        login.setOnClickListener(new View.OnClickListener() {
+        //로그인 버튼!!
+        login_Btn=(Button)findViewById(R.id.btn_login);
+        login_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-             if(id!=null&&pwd!=null) {
-                 Intent in = new Intent(LoginActivity.this,
-                         MapsActivity.class);
-                 startActivity(in);
-             }else{
-                 Toast.makeText(LoginActivity.this, "id,pwd를 확인해 주세요.", Toast.LENGTH_SHORT).show();
-             }
+                new loginSelect(LoginActivity.this).execute(edtID.getText().toString(), edtPw.getText().toString());
+
+//             if(id.equals()) {
+//                 Intent in = new Intent(LoginActivity.this,
+//                         MapsActivity.class);
+//                 startActivity(in);
+//             }else {
+//                 Toast.makeText(LoginActivity.this, "ID, PWD 를 확인해 주세요.", Toast.LENGTH_SHORT).show();
+//             }
             }
         });
 

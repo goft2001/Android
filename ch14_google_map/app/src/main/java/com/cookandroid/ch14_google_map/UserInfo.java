@@ -3,9 +3,9 @@ package com.cookandroid.ch14_google_map;
 
 public class UserInfo {
     String id,name,phone,grade;
-    public UserInfo(String id, String name, String phone,String pwd){
-        this.id = id;
+    public UserInfo(String name, String id, String phone,String pwd){
         this.name = name;
+        this.id = id;
         this.phone = phone;
         this.grade = pwd;
     }

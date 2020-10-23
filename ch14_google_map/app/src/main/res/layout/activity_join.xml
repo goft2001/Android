@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".JoinActivity">
+    tools:context=".LoginActivity"
+    android:layout_margin="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +32,7 @@
             android:ems="10"
             android:hint="이름 입력"
             android:inputType="textPersonName"
+
             />
 
     </LinearLayout>
@@ -59,6 +61,8 @@
         android:ems="10"
         android:hint="아이디 입력"
         android:inputType="textPersonName"
+
+
         />
 
     </LinearLayout>
@@ -87,6 +91,8 @@
             android:ems="10"
             android:hint="비밀번호 입력"
             android:inputType="textPersonName"
+
+
             />
 
     </LinearLayout>
@@ -109,12 +115,14 @@
 
 
         <EditText
-            android:id="@+id/edt_number"
+            android:id="@+id/edt_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="휴대전화 번호 입력"
             android:inputType="textPersonName"
+
+
             />
 
     </LinearLayout>

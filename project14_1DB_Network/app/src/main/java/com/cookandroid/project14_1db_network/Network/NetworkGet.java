@@ -28,7 +28,7 @@ public class NetworkGet extends AsyncTask<String,Void,String> {
     private Custom_Adapter adapter;
     String res;
 
-    //생성자 : 어뎁터에 데이터를 보냄 network - > adapter로 데이터 보냄
+    //생성자 : 어뎁터에 데이터를 보냄 onetwrk - > adapter로 데이터 보냄
     public NetworkGet(Custom_Adapter adapter){
         this.adapter = adapter;
     }

@@ -63,6 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="로그인"
+
+
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/edt_pw"
         app:layout_constraintStart_toStartOf="@+id/edt_pw"

@@ -1,43 +1,45 @@
 package com.cookandroid.ch14_google_map.Network;
 
-        import android.app.Activity;
-        import android.icu.util.Output;
-        import android.os.AsyncTask;
-        import android.util.Log;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.icu.util.Output;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-        import com.cookandroid.ch14_google_map.LoginActivity;
+import androidx.appcompat.app.AlertDialog;
 
-        import org.json.JSONException;
+import com.cookandroid.ch14_google_map.LoginActivity;
+import com.cookandroid.ch14_google_map.MapsActivity;
+import com.cookandroid.ch14_google_map.R;
+import com.cookandroid.ch14_google_map.UserInfo;
 
-        import java.io.BufferedReader;
-        import java.io.IOException;
-        import java.io.InputStreamReader;
-        import java.io.OutputStreamWriter;
-        import java.io.PrintWriter;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.util.List;
+import org.json.JSONException;
 
-public class JoinInsert extends AsyncTask<String,Void,String> {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+public class loginSelect extends AsyncTask<String,Void,String> {
     Activity act;
-    private URL Url;
-    private String URL_Adress = "http://10.100.206.37:9999/trackingMember/testDB_insert.jsp";
 
-    public JoinInsert(Activity act) {
+    private URL Url;
+    private String URL_Adress = "http://10.100.206.37:9999/trackingMember/loginDB_select.jsp";
+
+    public loginSelect(Activity act) {
         this.act = act;
     }
 
-
-//    String id, name, phone, pwd;
-//
-//    public JoinInsert(String id, String pwd, String name, String phone) {
-//
-//        this.id = id;
-//        this.name = name;
-//        this.phone = phone;
-//        this.pwd = pwd;
-//    }
 
 
     @Override
@@ -63,15 +65,9 @@ public class JoinInsert extends AsyncTask<String,Void,String> {
             conn.setRequestProperty("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
             //전송값 설정
             StringBuffer buffer = new StringBuffer();
-            buffer.append("name").append("=").append(strings[0]);
-            buffer.append("&id").append("=").append(strings[1]);
-            buffer.append("&pwd").append("=").append(strings[2]);
-            buffer.append("&phone").append("=").append(strings[3]);
+            buffer.append("id").append("=").append(strings[0]);
+            buffer.append("&pwd").append("=").append(strings[1]);
 
-//            buffer.append("name").append("=").append(id);
-//            buffer.append("&id").append("=").append(name);
-//            buffer.append("&pwd").append("=").append(pwd);
-//            buffer.append("&phone").append("=").append(phone);
 
             //서버로 전송
             OutputStreamWriter outStream = new OutputStreamWriter(conn.getOutputStream(), "utf-8");
@@ -100,19 +96,27 @@ public class JoinInsert extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String s){
         super.onPostExecute(s);
+        Log.i("get :",s);
+
+        ArrayList<UserInfo> userList = new ArrayList<UserInfo>(); // 데이터 받을 곳
+
         int res = 0;
         try{
-            res = JsonParser.getResultJson(s);
+            res = JsonParser.getUserInfoJson(s, userList);
         } catch (JSONException e){
             e.printStackTrace();
         }
-        if(res==0){
 
+        if(res==0){
+            Toast.makeText(act, "로그인 실패", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(act, "회원가입 성공", Toast.LENGTH_SHORT).show();
+            Toast.makeText(act, "로그인 성공", Toast.LENGTH_SHORT).show();
+             Intent in = new Intent(act,  MapsActivity.class);
+             act.startActivity(in);
 
         }
 
     }
+
 }
