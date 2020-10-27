@@ -1,6 +1,6 @@
-package com.cookandroid.ch14_google_map.Network;
+package com.cookandroid.Tracking_Check.Network;
 
-import com.cookandroid.ch14_google_map.UserInfo;
+import com.cookandroid.Tracking_Check.UserInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;

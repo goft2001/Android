@@ -1,12 +1,9 @@
-package com.cookandroid.ch14_google_map.Network;
+package com.cookandroid.Tracking_Check.Network;
 
         import android.app.Activity;
-        import android.icu.util.Output;
         import android.os.AsyncTask;
         import android.util.Log;
         import android.widget.Toast;
-
-        import com.cookandroid.ch14_google_map.LoginActivity;
 
         import org.json.JSONException;
 
@@ -17,7 +14,6 @@ package com.cookandroid.ch14_google_map.Network;
         import java.io.PrintWriter;
         import java.net.HttpURLConnection;
         import java.net.URL;
-        import java.util.List;
 
 public class JoinInsert extends AsyncTask<String,Void,String> {
     Activity act;

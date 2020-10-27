@@ -1,18 +1,16 @@
-package com.cookandroid.ch14_google_map;
+package com.cookandroid.Tracking_Check;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.cookandroid.ch14_google_map.Network.JoinInsert;
-import com.cookandroid.ch14_google_map.Network.loginSelect;
+import com.cookandroid.Tracking_Check.Network.JoinInsert;
+import com.cookandroid.Tracking_Check.Network.loginSelect;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        setTitle("Tracking check");
 
         edtID = (EditText)findViewById  (R.id.edt_id);
         edtPw = (EditText)findViewById  (R.id.edt_pw);

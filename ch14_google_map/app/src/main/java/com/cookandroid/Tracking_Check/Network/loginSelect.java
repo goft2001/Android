@@ -1,22 +1,13 @@
-package com.cookandroid.ch14_google_map.Network;
+package com.cookandroid.Tracking_Check.Network;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.icu.util.Output;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-
-import com.cookandroid.ch14_google_map.LoginActivity;
-import com.cookandroid.ch14_google_map.MapsActivity;
-import com.cookandroid.ch14_google_map.R;
-import com.cookandroid.ch14_google_map.UserInfo;
+import com.cookandroid.Tracking_Check.MapsActivity;
+import com.cookandroid.Tracking_Check.UserInfo;
 
 import org.json.JSONException;
 
@@ -28,7 +19,6 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 public class loginSelect extends AsyncTask<String,Void,String> {
     Activity act;

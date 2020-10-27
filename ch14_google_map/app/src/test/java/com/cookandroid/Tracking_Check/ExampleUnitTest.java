@@ -1,4 +1,4 @@
-package com.cookandroid.ch14_google_map;
+package com.cookandroid.Tracking_Check;
 
 import org.junit.Test;
 
